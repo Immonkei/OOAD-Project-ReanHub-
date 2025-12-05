@@ -25,6 +25,7 @@ Student Hub is a full-stack web application designed to facilitate online learni
 - **CORS** for cross-origin requests
 
 ## 📁 Project Structure
+
 OOAD-PROJECT/
 ├── backend/ # Backend server code
 │ ├── controllers/ # Route controllers
