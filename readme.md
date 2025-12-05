@@ -184,14 +184,6 @@ This project is licensed under the MIT License.
 - Instructor for guidelines (Mao Makara)
 
 
-This README now correctly reflects your project structure with:
-- **OOAD-PROJECT** as the root folder
-- **backend** as the backend subfolder
-- **student-hub** as the frontend subfolder
-
-The instructions are updated to navigate between these directories properly for setup and running the application.
-
-
 
 
 
