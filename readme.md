@@ -1,190 +1,264 @@
-# ReanHub - Learning Management System
+# 🎓 ReanHub – Learning Management System (LMS)
 
-A comprehensive Learning Management System (LMS) built with modern web technologies for students, teachers, and administrators.
+**ReanHub** is a full-stack **Learning Management System (LMS)** built to support online learning and classroom management for **students, teachers, and administrators**.
+
+The system focuses on **role-based access**, clean separation between frontend and backend, and real-world academic workflows such as assignments, quizzes, grading, and progress tracking.
+
+---
 
 ## 🚀 Project Overview
 
-Student Hub is a full-stack web application designed to facilitate online learning and classroom management. The system provides different interfaces and functionalities for students, teachers, and administrators to manage courses, assignments, quizzes, and track academic progress.
+ReanHub provides a centralized platform where:
+
+* Students can enroll in classes, submit assignments, and track progress
+* Teachers can manage courses, assessments, and grading
+* Administrators can oversee users, content, and system operations
+
+This project was developed as part of an **Object-Oriented Analysis and Design (OOAD)** course and follows **real-world system design principles**.
+
+---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React** with TypeScript
-- **Tailwind CSS** for styling
-- **shadcn/ui** components
-- **React Router** for navigation
-- **TanStack Query** for data fetching
-- **React Hook Form** for form handling
-- **Lucide React** for icons
+
+* **React** (TypeScript)
+* **Tailwind CSS**
+* **shadcn/ui**
+* **React Router**
+* **TanStack Query** (server-state management)
+* **React Hook Form**
+* **Lucide React** (icons)
 
 ### Backend
-- **Node.js** with Express.js
-- **MongoDB** with Mongoose ODM
-- **JWT** for authentication
-- **bcrypt** for password hashing
-- **CORS** for cross-origin requests
+
+* **Node.js** + **Express.js**
+* **MongoDB** with **Mongoose ODM**
+* **JWT** authentication
+* **bcrypt** for password hashing
+* **CORS** for secure cross-origin access
+
+---
+
+## 🧱 System Architecture
+
+```
+Frontend (React + TypeScript)
+        |
+        | JWT
+        v
+Backend API (Node.js + Express)
+        |
+        v
+MongoDB (Mongoose ODM)
+```
+
+---
 
 ## 📁 Project Structure
 
+```
 OOAD-PROJECT/
-├── backend/ # Backend server code
-│ ├── controllers/ # Route controllers
-│ ├── models/ # MongoDB models
-│ ├── routes/ # API routes
-│ ├── middleware/ # Custom middleware
-│ ├── config/ # Database and app configuration
-│ ├── utils/ # Utility functions
-│ └── server.js # Entry point
-└── student-hub/ # Frontend React application
-├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Page components
-│ ├── context/ # React context providers
-│ ├── hooks/ # Custom React hooks
-│ ├── services/ # API service functions
-│ └── utils/ # Utility functions
-└── package.json
+├── backend/
+│   ├── controllers/    # Request handling logic
+│   ├── models/         # MongoDB schemas
+│   ├── routes/         # API routes
+│   ├── middleware/     # Auth & role protection
+│   ├── config/         # App & DB configuration
+│   ├── utils/          # Helper utilities
+│   └── server.js       # Backend entry point
+│
+└── student-hub/
+    ├── src/
+    │   ├── components/ # Reusable UI components
+    │   ├── pages/      # Page-level components
+    │   ├── context/    # Global state providers
+    │   ├── hooks/      # Custom hooks
+    │   ├── services/   # API service layer
+    │   └── utils/      # Utility functions
+    └── package.json
+```
 
+---
 
 ## 👥 User Roles & Features
 
 ### 👨‍🎓 Student
-- View and enroll in classes
-- Access assignments and quizzes
-- Submit assignments
-- Take quizzes
-- Track academic progress
-- View grades and feedback
+
+* Enroll in classes
+* View assignments and quizzes
+* Submit assignments
+* Take quizzes
+* Track academic progress
+* View grades and feedback
 
 ### 👨‍🏫 Teacher
-- Create and manage classes
-- Create assignments and quizzes
-- Grade student submissions
-- Track class performance
-- Manage student enrollments
+
+* Create and manage classes
+* Create assignments and quizzes
+* Grade student submissions
+* Monitor class performance
+* Manage student enrollment
 
 ### 👨‍💼 Admin
-- User management (students, teachers)
-- Class management
-- Assignment and Quiz management
-- System-wide analytics
-- Platform configuration
+
+* Manage users (students & teachers)
+* Manage classes and content
+* Oversee assignments and quizzes
+* View system-wide analytics
+* Configure platform settings
+
+---
+
+## 🔐 Authentication & Authorization
+
+* JWT-based authentication
+* Role-Based Access Control (RBAC)
+* Protected routes per user role
+* Secure password hashing with bcrypt
+
+---
+
+## 🗃️ Database Models
+
+* **User** – Students, Teachers, Admins
+* **Class** – Course metadata
+* **Assignment** – Homework & projects
+* **Quiz** – Assessments
+* **Submission** – Student submissions
+* **Grade** – Evaluation results
+
+---
+
+## 📚 API Endpoints (Sample)
+
+### Authentication
+
+* `POST /api/auth/register`
+* `POST /api/auth/login`
+
+### Classes
+
+* `GET /api/classes`
+* `POST /api/classes`
+* `GET /api/classes/:id`
+* `PUT /api/classes/:id`
+* `DELETE /api/classes/:id`
+
+### Assignments
+
+* `GET /api/assignments`
+* `POST /api/assignments`
+* `GET /api/assignments/:id`
+* `PUT /api/assignments/:id`
+* `DELETE /api/assignments/:id`
+
+### Quizzes
+
+* `GET /api/quizzes`
+* `POST /api/quizzes`
+* `GET /api/quizzes/:id`
+* `POST /api/quizzes/:id/submit`
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB (v4.4 or higher)
-- npm or yarn
 
-### Installation
+* Node.js v16+
+* MongoDB v4.4+
+* npm or yarn
 
-1. **Navigate to the project directory**
-   ```bash
-   cd OOAD-PROJECT
+---
 
-### Backend Setup
-- cd backend
-- npm install
-Server will run on http://localhost:5000
+### 🖥️ Backend Setup
 
-###  Environment Configuration
-- Create a .env file in the backend directory:
-- PORT=5000
-- MONGODB_URI=mongodb://localhost:27017/student-hub
-- JWT_SECRET=your-jwt-secret-key
-- NODE_ENV=development
-
-###  Frontend Setup
-- cd ../student-hub
-- npm install
-Server will run on http://localhost:8080
-
-### 📚 API Endpoints
-
-Authentication
-- POST /api/auth/register - User registration
-- POST /api/auth/login - User login
-
-Classes
-- GET /api/classes - Get all classes
-- POST /api/classes - Create new class
-- GET /api/classes/:id - Get class details
-- DELETE /api/classes/:id - Delete class
-- PUT /api/classes/:id - Update class
-
-Assignments
-- GET /api/assignments - Get assignments
-- POST /api/assignments - Create assignment
-- GET /api/assignments/:id - Get assignment details
-- DELETE /api/assignments/:id - Delete assignment
-- PUT /api/assignments/:id - Update assignment
-
-Quizzes
-- GET /api/quizzes - Get quizzes
-- POST /api/quizzes - Create quiz
-- GET /api/quizzes/:id - Get quiz details
-- POST /api/quizzes/:id/submit - Submit quiz
-
-### 🗃️ Database Models
-
-- User - Students, Teachers, Admins
-- Class - Course information
-- Assignment - Homework and projects
-- Quiz - Assessments and tests
-- Submission - Student work submissions
-- Grade - Evaluation results
-
-### 🔐 Authentication & Authorization
- 
-- JWT-based authentication
-- Role-based access control (RBAC)
-- Protected routes for different user types
-- Session management with secure tokens
-
-### 🎨 UI/UX Features
-
-- Responsive design for all devices
-- Modern and clean interface
-- Role-based dashboard redirection
-- Accessible components
-
-
-### 🚧 Development
-
-You can run both frontend and backend from the root directory:
-# Terminal 1 - Backend
+```bash
 cd backend
+npm install
 npm run dev
+```
 
-# Terminal 2 - Frontend  
+Backend runs at:
+
+```
+http://localhost:5000
+```
+
+#### Environment Variables (`backend/.env`)
+
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/reanhub
+JWT_SECRET=your-secret-key
+NODE_ENV=development
+```
+
+---
+
+### 🌐 Frontend Setup
+
+```bash
 cd student-hub
+npm install
 npm run dev
+```
 
-### 🤝 Contributing
+Frontend runs at:
+
+```
+http://localhost:8080
+```
+
+---
+
+## 🎨 UI/UX Highlights
+
+* Fully responsive design
+* Role-based dashboards
+* Clean, modern interface
+* Accessible components
+* Optimized form handling
+
+---
+
+## 📈 What This Project Demonstrates
+
+* Full-stack application architecture
+* Role-based authorization (RBAC)
+* RESTful API design
+* Secure authentication with JWT
+* Scalable frontend structure
+* Real academic workflow modeling
+
+---
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
+3. Commit changes
+4. Push to your branch
 5. Open a Pull Request
 
-### 📄 License
+---
 
-This project is licensed under the MIT License.
+## 📄 License
 
-### 👥 Authors
+This project is licensed under the **MIT License**.
 
-- Min Phanith and team- OOAD Project.
+---
 
-### 🙏 Acknowledgments
+## 👥 Authors
 
-- Object-Oriented Analysis and Design Course Requirements
-- Open source community for amazing tools and libraries
-- Instructor for guidelines (Mao Makara)
+* **Min Phanith** & Team
+  OOAD Project – Royal University of Phnom Penh
 
+---
 
+## 🙏 Acknowledgments
 
-
-
-
+* Object-Oriented Analysis and Design course
+* Open-source community
+* Instructor: **Mao Makar
