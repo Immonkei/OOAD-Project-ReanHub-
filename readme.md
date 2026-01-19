@@ -261,4 +261,4 @@ This project is licensed under the **MIT License**.
 
 * Object-Oriented Analysis and Design course
 * Open-source community
-* Instructor: **Mao Makar
+* Instructor: **Mao Makara
