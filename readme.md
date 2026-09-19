@@ -252,13 +252,11 @@ This project is licensed under the **MIT License**.
 
 ## 👥 Authors
 
-* **Min Phanith** & Team
-  OOAD Project – Royal University of Phnom Penh
-
+* **Min Phanith** 
 ---
 
 ## 🙏 Acknowledgments
 
 * Object-Oriented Analysis and Design course
 * Open-source community
-* Instructor: **Mao Makara
+* Instructor: Mao Makara
